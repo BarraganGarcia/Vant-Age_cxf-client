@@ -26,6 +26,7 @@ public class Signer {
 	private Properties prop = new Properties();
 	
 	private Logger logger = LoggerFactory.getLogger(Signer.class.getName());
+	private PrivateKey privateKey;
 
 	public static Signer getInstance() {
 		return instance;
@@ -36,6 +37,7 @@ public class Signer {
 		try {
 			input = new FileInputStream(new File(Signer.class.getClassLoader().getResource("config.properties").getFile()));
 			prop.load(input);
+			privateKey = readPrivateKeyFromKeystore();
 		} catch (IOException ex) {
 			ex.printStackTrace();
 		} finally {
@@ -53,7 +55,7 @@ public class Signer {
 		String signature = null;
 		try {
 			Signature signing = Signature.getInstance("SHA256withECDSA");
-			signing.initSign(readPrivateKeyFromKeystore());
+			signing.initSign(privateKey);
 			signing.update(payload.getBytes());
 			signature = Hex.encodeHexString(signing.sign(), true);
 		} catch (NoSuchAlgorithmException e) {
@@ -66,7 +68,7 @@ public class Signer {
 		return signature;
 	}
 
-	public PrivateKey readPrivateKeyFromKeystore() {
+	private PrivateKey readPrivateKeyFromKeystore() {
 		PrivateKey ecKey = null;
 		try {
 			ClassLoader classLoader = Signer.class.getClassLoader();
