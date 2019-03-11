@@ -1,5 +1,5 @@
 #!/bin/sh
-export CLIENT=cliente
+export CLIENT=
 export PRIVATE_KEY_FILE=pri_key.pem
 export CERTIFICATE_FILE=certificate.pem
 export SUBJECT="/C=/ST=/L=/O=/CN=${CLIENT}"
