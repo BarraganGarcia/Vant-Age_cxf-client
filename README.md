@@ -2,7 +2,7 @@
 
 1.- Modifica el archivo pom.xml y define las variables del profile QA: keystore.password, privatekey.alias, privatekey.password, truststore.password, publickey.alias
 
-2.- Edita el archivo src/main/securiy/createKeystore.sh y define las variables: KEYSTORE_PASSWORD y KEY_PASSWORD
+2.- Edita el archivo src/main/securiy/createKeystore.sh y define las variables: CLIENT, KEYSTORE_PASSWORD y KEY_PASSWORD
 
 3.- Añade permisos de ejecución al archivo src/main/securiy/createKeystore.sh y ejecútalo
 
