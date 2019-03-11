@@ -15,8 +15,11 @@
 			<properties>
 				<keystore.name>keystore.jks</keystore.name>
 				<keystore.password></keystore.password>
-				<key.alias>kobra</key.alias>
-				<key.password></key.password>
+				<privatekey.alias></privatekey.alias>
+				<privatekey.password></privatekey.password>
+				<truststore.name>truststore.jks</truststore.name>
+				<truststore.password></truststore.password>
+				<publickey.alias></publickey.alias>
 			</properties>
 		</profile>
 	</profiles>

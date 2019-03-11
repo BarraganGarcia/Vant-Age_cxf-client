@@ -6,8 +6,6 @@ import javax.xml.bind.annotation.XmlEnum;
 import javax.xml.bind.annotation.XmlEnumValue;
 import javax.xml.bind.annotation.XmlType;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import io.swagger.annotations.ApiModelProperty;
@@ -69,63 +67,54 @@ public class Peticion  {
   private String fechaApertura = null;
 
   @ApiModelProperty(value = "Apellido paterno de la persona.")
-  @JsonInclude(Include.NON_NULL)
  /**
    * Apellido paterno de la persona.
   **/
   private String apellidoParterno = null;
 
   @ApiModelProperty(value = "Apellido materno de la persona.")
-  @JsonInclude(Include.NON_NULL)
  /**
    * Apellido materno de la persona.
   **/
   private String apellidoMaterno = null;
 
   @ApiModelProperty(value = "Nombre de la persona")
-  @JsonInclude(Include.NON_NULL)
  /**
    * Nombre de la persona
   **/
   private String nombres = null;
 
   @ApiModelProperty(value = "Fecha de nacimiento de la persona, en el formato especificado (por defecto DD/MM/YYYY).")
-  @JsonInclude(Include.NON_NULL)
  /**
    * Fecha de nacimiento de la persona, en el formato especificado (por defecto DD/MM/YYYY).
   **/
   private String fechaNacimiento = null;
 
   @ApiModelProperty(value = "RFC con homoclave de la persona.")
-  @JsonInclude(Include.NON_NULL)
  /**
    * RFC con homoclave de la persona.
   **/
   private String rfc = null;
 
   @ApiModelProperty(value = "Calle y número del domicilio.")
-  @JsonInclude(Include.NON_NULL)
  /**
    * Calle y número del domicilio.
   **/
   private String direccion = null;
 
   @ApiModelProperty(value = "Colonia en que se ubica domicilio.")
-  @JsonInclude(Include.NON_NULL)
  /**
    * Colonia en que se ubica domicilio.
   **/
   private String coloniaPoblacion = null;
 
   @ApiModelProperty(value = "Municipio en que se ubica el domicilio.")
-  @JsonInclude(Include.NON_NULL)
  /**
    * Municipio en que se ubica el domicilio.
   **/
   private String delegacionMunicipio = null;
 
   @ApiModelProperty(value = "Ciudad en que se ubica el domicilio.")
-  @JsonInclude(Include.NON_NULL)
  /**
    * Ciudad en que se ubica el domicilio.
   **/
@@ -165,14 +154,12 @@ public enum EstadoEnum {
 }
 
   @ApiModelProperty(value = "Estado en que se ubica el domicilio.")
-  @JsonInclude(Include.NON_NULL)
  /**
    * Estado en que se ubica el domicilio.
   **/
   private EstadoEnum estado = null;
 
   @ApiModelProperty(value = "Código postal al que pertenece el domicilio.")
-  @JsonInclude(Include.NON_NULL)
  /**
    * Código postal al que pertenece el domicilio.
   **/
@@ -582,4 +569,3 @@ public enum EstadoEnum {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

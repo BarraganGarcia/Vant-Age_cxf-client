@@ -46,6 +46,7 @@ public class SignerInterceptor extends AbstractPhaseInterceptor<Message> {
 				cs.writeCacheTo(sb);
 				logger.debug("Payload: " + sb.toString());
 				
+				@SuppressWarnings("unchecked")
 				Map<String, List<String>> headers = (Map<String, List<String>>) message.get(Message.PROTOCOL_HEADERS);
 				
 				List<String> list = headers.get("x-signature");
