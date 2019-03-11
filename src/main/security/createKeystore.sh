@@ -7,7 +7,7 @@ export PKCS12_FILE=keypair.p12
 export KEYSTORE_PASSWORD=
 export KEY_PASSWORD=
 export KEYSTORE_FILE=keystore.jks
-export ALIAS=${CLIENTE}
+export ALIAS=${CLIENT}
 #Borra todos los archivos
 rm -rf ${KEYSTORE_FILE}
 rm -rf ${PRIVATE_KEY_FILE}
