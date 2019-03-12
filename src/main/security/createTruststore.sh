@@ -5,6 +5,9 @@ export TRUSTSTORE_FILE=truststore.jks
 export TRUSTSTORE_PASSWORD=
 export KEY_PASSWORD=
 export ALIAS=${CLIENT}
+#Asigna la contraseña y el alias en el archivo pom.xml
+sed -i "" "s/<truststore.password><\/truststore.password>/<truststore.password>${TRUSTSTORE_PASSWORD}<\/truststore.password>/" ../../../pom.xml
+sed -i "" "s/<publickey.alias><\/publickey.alias>/<publickey.alias>${ALIAS}<\/publickey.alias>/" ../../../pom.xml
 #Genera un truststore con un par de llaves dummy.
 keytool -genkey -alias dummy -keyalg RSA -keysize 2048 -keystore ${TRUSTSTORE_FILE} -dname "CN=dummy, OU=, O=, L=, S=, C=" -storepass ${TRUSTSTORE_PASSWORD} -keypass ${KEY_PASSWORD}
 #Lista el contenido del truststore.

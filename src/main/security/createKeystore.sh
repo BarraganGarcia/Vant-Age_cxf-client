@@ -13,6 +13,10 @@ rm -rf ${KEYSTORE_FILE}
 rm -rf ${PRIVATE_KEY_FILE}
 rm -rf ${CERTIFICATE_FILE}
 rm -rf ${PKCS12_FILE}
+#Asigna las contraseñas y el alias en el archivo pom.xml
+sed -i "" "s/<keystore.password><\/keystore.password>/<keystore.password>${KEYSTORE_PASSWORD}<\/keystore.password>/" ../../../pom.xml
+sed -i "" "s/<privatekey.alias><\/privatekey.alias>/<privatekey.alias>${ALIAS}<\/privatekey.alias>/" ../../../pom.xml
+sed -i "" "s/<privatekey.password><\/privatekey.password>/<privatekey.password>${KEY_PASSWORD}<\/privatekey.password>/" ../../../pom.xml
 #Genera la llave privada y el certificado.
 openssl ecparam -name secp384r1 -genkey -out ${PRIVATE_KEY_FILE}
 openssl req -new -x509 -days 365 -key ${PRIVATE_KEY_FILE} -out ${CERTIFICATE_FILE} -subj "${SUBJECT}"
