@@ -44,7 +44,7 @@ public class VerifierInterceptor extends AbstractPhaseInterceptor<Message> {
 					try {
 						String payload = IOUtils.readStringFromStream(is);
 						boolean verify = Signer.getInstance().verifyPayload(payload, signature);
-						logger.debug("Payload: '" + payload + "'");
+						logger.debug("Payload: " + payload);
 						logger.debug("Verify: " + verify);
 						if(!verify) {
 							throw new VerifyingSignatureException("Error al verificar la firma del payload.");
